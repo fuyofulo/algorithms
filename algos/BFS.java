@@ -47,13 +47,13 @@ public class BFS {
     }
 
     public static void bfs(int v, int [][] graph, int n) {
+        
         visited = new int [n];
         queue = new int [n];
         front = 0;
         rear = -1;
         int u = v;
         visited[v] = 1;
-
         queue[++rear] = v;
 
         while (front <= rear) {
