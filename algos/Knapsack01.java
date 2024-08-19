@@ -4,11 +4,11 @@ public class Knapsack01 {
         int[][] dp = new int[n+1][W+1];
 
         for (int i = 1; i <= n; i++) {
-            for (int w = 0; w <= W; w++) {
-                if (weights[i-1] <= w) {
-                    dp[i][w] = Math.max(dp[i-1][w], values[i-1] + dp[i-1][w-weights[i-1]]);
+            for (int j = 0; j <= W; j++) {
+                if (weights[i-1] <= j) {
+                    dp[i][j] = Math.max(dp[i-1][j], values[i-1] + dp[i-1][j-weights[i-1]]);
                 } else {
-                    dp[i][w] = dp[i-1][w];
+                    dp[i][j] = dp[i-1][j];
                 }
             }
         }
